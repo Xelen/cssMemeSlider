@@ -45,45 +45,84 @@ body {
   font-size: 15px;
   min-width: 320px;
 }
-
-.slider {
-  display: flex;
-  flex-direction: column;
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #000;
+  padding: 20px;
+}
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  background-color: #000;
   overflow: hidden;
 }
-
-.memtext {
+.slider,
+.footer {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  max-width: 500px;
+}
+.slider {
+  z-index: 1;
+}
+.footer {
   display: flex;
-  transition: transform 0.5s ease;
-  width: 50%;
+  justify-content: end;
+  align-items: end;
+  z-index: 2;
 }
 
 .slides {
   display: flex;
   transition: transform 0.5s ease;
+  /* margin-bottom: 30px; */
 }
-.slide,
-.memtext p {
-  width: 100%;
-  flex-shrink: 0;
+.slide {
   display: flex;
-
-  background-color: #f5f5f5;
-  font-size: 24px;
   flex-direction: column;
+}
+.mem-text {
+  color: #fff;
+  font-size: 24px;
 }
 .slide img {
   max-width: 500px;
+  margin-bottom: 30px;
 }
 
 .controls {
   display: flex;
-  flex: 0 0 50%;
+  flex: 0 0 40%;
   justify-content: space-between;
-  width: 50%;
+  gap: 5px;
+  height: 50px;
+  align-items: end;
+  background-color: #000;
+  padding: 0 0 0 20px;
+}
+.controls label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000;
+  cursor: pointer;
+}
+.controls label span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
 }
 .bullet {
   height: 20px;
@@ -98,49 +137,21 @@ input[type='radio'] {
 #slide1:checked ~ .slides {
   transform: translateX(0%);
 }
-#slide1:checked ~ .memtext {
-  transform: translateX(0%);
-}
 
 #slide2:checked ~ .slides {
-  transform: translateX(-100%);
-}
-#slide2:checked ~ .memtext {
   transform: translateX(-100%);
 }
 
 #slide3:checked ~ .slides {
   transform: translateX(-200%);
 }
-#slide3:checked ~ .memtext {
-  transform: translateX(-200%);
-}
 
 #slide4:checked ~ .slides {
-  transform: translateX(-300%);
-}
-#slide4:checked ~ .memtext {
   transform: translateX(-300%);
 }
 
 #slide5:checked ~ .slides {
   transform: translateX(-400%);
-}
-#slide5:checked ~ .memtext {
-  transform: translateX(-400%);
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-}
-
-.controls label {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ddd;
-  cursor: pointer;
 }
 
 input[type='radio']:checked + label {
