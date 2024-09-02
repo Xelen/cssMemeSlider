@@ -51,7 +51,7 @@ body {
   background: #000;
   padding: 20px;
 }
-.grid-container {
+.slider {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
@@ -62,7 +62,7 @@ body {
   background-color: #000;
   overflow: hidden;
 }
-.slider,
+.slides,
 .footer {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -80,50 +80,24 @@ body {
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease;
-  /* margin-bottom: 30px; */
+  transition: transform 0.7s ease;
 }
+
 .slide {
   display: flex;
   flex-direction: column;
 }
+
 .mem-text {
   color: #fff;
   font-size: 24px;
+  line-height: 40px;
 }
 .slide img {
   max-width: 500px;
   margin-bottom: 30px;
 }
 
-.controls {
-  display: flex;
-  flex: 0 0 40%;
-  justify-content: space-between;
-  gap: 5px;
-  height: 50px;
-  align-items: end;
-  background-color: #000;
-  padding: 0 0 0 20px;
-}
-.controls label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #000;
-  cursor: pointer;
-}
-.controls label span {
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ddd;
-  cursor: pointer;
-}
 .bullet {
   height: 20px;
   width: 20px;
@@ -154,6 +128,55 @@ input[type='radio'] {
   transform: translateX(-400%);
 }
 
-input[type='radio']:checked + label {
-  background-color: #333;
+.controls {
+  display: flex;
+  flex: 0 0 40%;
+  justify-content: space-between;
+  gap: 2px;
+  height: 50px;
+  align-items: end;
+  background-color: #000;
+  padding: 0 0 0 20px;
+}
+.controls label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000;
+  cursor: pointer;
+}
+.controls label span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  transition: background-color 0.3s;
+}
+.controls label:hover span {
+  background-color: red;
+}
+.controls label:active span {
+  background-color: violet;
+}
+
+/* Стили для всех радиокнопок */
+input#slide1:checked ~ .footer .controls label[for='slide1'] span,
+input#slide2:checked ~ .footer .controls label[for='slide2'] span,
+input#slide3:checked ~ .footer .controls label[for='slide3'] span,
+input#slide4:checked ~ .footer .controls label[for='slide4'] span,
+input#slide5:checked ~ .footer .controls label[for='slide5'] span {
+  border: 1px solid yellow;
+  background: transparent;
+}
+input#slide1:checked ~ .footer .controls label[for='slide1']:hover span,
+input#slide2:checked ~ .footer .controls label[for='slide2']:hover span,
+input#slide3:checked ~ .footer .controls label[for='slide3']:hover span,
+input#slide4:checked ~ .footer .controls label[for='slide4']:hover span,
+input#slide5:checked ~ .footer .controls label[for='slide5']:hover span {
+  border: 1px solid green;
+  background: transparent;
 }
