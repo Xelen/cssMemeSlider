@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'ArialRegular';
+  src: url('../fonts/arial-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-box-sizing: border-box;
@@ -5,71 +11,51 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  width: 3px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #acacac;
-}
-
-::after,
-::before {
-  box-sizing: border-box;
-}
-
-img,
-video,
-canvas {
-  overflow: hidden;
-}
-
 html {
   scroll-behavior: smooth;
+  font-size: 24px;
 }
-button {
-  cursor: pointer;
-}
+
 html,
 body {
   height: 100%;
 }
 
 body {
+  font-family: 'ArialRegular', sans-serif;
   display: block;
   background-color: #ccc;
-  line-height: 160%;
   font-weight: 400;
   margin: 0;
-  font-size: 15px;
-  min-width: 320px;
+  color: #fff;
+  line-height: 160%;
+  min-width: 13.33rem;
 }
+
 .wrapper {
-  max-width: 800px;
+  max-width: 42.666rem;
   margin: 0 auto;
   background: #000;
-  padding: 20px;
+  padding: 0.833rem;
 }
+
 .slider {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   position: relative;
-  width: 100%;
-  max-width: 500px;
   margin: 0 auto;
   background-color: #000;
   overflow: hidden;
 }
+
 .slides,
 .footer {
   grid-row: 1 / 2;
   grid-column: 1 / 2;
-  max-width: 500px;
 }
-.slider {
-  z-index: 1;
+.mem-text {
+  font-size: clamp(0.666rem, 3vw, 1rem);
 }
 .footer {
   display: flex;
@@ -81,6 +67,7 @@ body {
 .slides {
   display: flex;
   transition: transform 0.7s ease;
+  width: 500%;
 }
 
 .slide {
@@ -88,20 +75,9 @@ body {
   flex-direction: column;
 }
 
-.mem-text {
-  color: #fff;
-  font-size: 24px;
-  line-height: 40px;
-}
 .slide img {
-  max-width: 500px;
-  margin-bottom: 30px;
-}
-
-.bullet {
-  height: 20px;
-  width: 20px;
-  background-color: red;
+  width: 100%;
+  margin-bottom: 1.25rem;
 }
 
 input[type='radio'] {
@@ -113,45 +89,42 @@ input[type='radio'] {
 }
 
 #slide2:checked ~ .slides {
-  transform: translateX(-100%);
+  transform: translateX(-20%);
 }
 
 #slide3:checked ~ .slides {
-  transform: translateX(-200%);
+  transform: translateX(-40%);
 }
 
 #slide4:checked ~ .slides {
-  transform: translateX(-300%);
+  transform: translateX(-60%);
 }
 
 #slide5:checked ~ .slides {
-  transform: translateX(-400%);
+  transform: translateX(-80%);
 }
 
 .controls {
   display: flex;
-  flex: 0 0 40%;
   justify-content: space-between;
-  gap: 2px;
-  height: 50px;
+  gap: 0.08rem;
   align-items: end;
   background-color: #000;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 0.833rem;
 }
 .controls label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
-  background-color: #000;
   cursor: pointer;
 }
 .controls label span {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 0.416rem;
+  height: 0.416rem;
   border-radius: 50%;
   background-color: #ddd;
   transition: background-color 0.3s;
@@ -163,7 +136,6 @@ input[type='radio'] {
   background-color: violet;
 }
 
-/* Стили для всех радиокнопок */
 input#slide1:checked ~ .footer .controls label[for='slide1'] span,
 input#slide2:checked ~ .footer .controls label[for='slide2'] span,
 input#slide3:checked ~ .footer .controls label[for='slide3'] span,
@@ -180,3 +152,9 @@ input#slide5:checked ~ .footer .controls label[for='slide5']:hover span {
   border: 1px solid green;
   background: transparent;
 }
+
+/* @media screen and (max-width: 1024px) {
+  .mem-text {
+    font-size: clamp(18px, 3vw, 24px);
+  }
+} */
