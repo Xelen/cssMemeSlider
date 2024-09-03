@@ -13,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 html,
@@ -24,7 +24,7 @@ body {
 body {
   font-family: 'ArialRegular', sans-serif;
   display: block;
-  background-color: #ccc;
+  background-color: #fff;
   font-weight: 400;
   margin: 0;
   color: #fff;
@@ -33,7 +33,7 @@ body {
 }
 
 .wrapper {
-  max-width: 42.666rem;
+  max-width: 56.888rem;
   margin: 0 auto;
   background: #000;
   padding: 0.833rem;
@@ -55,6 +55,7 @@ body {
   grid-column: 1 / 2;
 }
 .mem-text {
+  width: 100%;
   font-size: clamp(0.666rem, 3vw, 1rem);
 }
 .footer {
@@ -111,20 +112,21 @@ input[type='radio'] {
   align-items: end;
   background-color: #000;
   padding: 0 0 0 0.833rem;
+  width: 20%;
 }
 .controls label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.56rem;
+  height: 1.56rem;
   border-radius: 50%;
   cursor: pointer;
 }
 .controls label span {
   display: block;
-  width: 0.416rem;
-  height: 0.416rem;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   background-color: #ddd;
   transition: background-color 0.3s;
@@ -153,8 +155,5 @@ input#slide5:checked ~ .footer .controls label[for='slide5']:hover span {
   background: transparent;
 }
 
-/* @media screen and (max-width: 1024px) {
-  .mem-text {
-    font-size: clamp(18px, 3vw, 24px);
-  }
-} */
+@media screen and (max-width: 768px) {
+}
