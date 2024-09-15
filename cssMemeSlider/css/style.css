@@ -13,7 +13,6 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
 }
 
 html,
@@ -29,11 +28,11 @@ body {
   margin: 0;
   color: #fff;
   line-height: 160%;
-  min-width: 13.33rem;
+  min-width: 20rem;
 }
 
 .wrapper {
-  max-width: 56.888rem;
+  max-width: 64rem;
   margin: 0 auto;
   background: #25282a;
   padding: 1.25rem 1.25rem 2rem;
@@ -63,7 +62,6 @@ body {
 }
 
 .mem-text {
-  /* width: 100%; */
   font-size: clamp(0.666rem, 3vw, 1rem);
 }
 
@@ -144,28 +142,15 @@ input[type='radio'] {
   background-color: #71a5f1;
   transition: background-color 0.3s;
 }
-.controls label:hover span {
-  background-color: #fff;
-}
-.controls label:active span {
-  background-color: #f1f1f1;
-}
 
 input#slide1:checked ~ .footer .controls label[for='slide1'] span,
 input#slide2:checked ~ .footer .controls label[for='slide2'] span,
 input#slide3:checked ~ .footer .controls label[for='slide3'] span,
 input#slide4:checked ~ .footer .controls label[for='slide4'] span,
 input#slide5:checked ~ .footer .controls label[for='slide5'] span {
-  border: 2px solid #71a5f1;
+  border: 0.125rem solid #71a5f1;
   background: transparent;
-}
-input#slide1:checked ~ .footer .controls label[for='slide1']:hover span,
-input#slide2:checked ~ .footer .controls label[for='slide2']:hover span,
-input#slide3:checked ~ .footer .controls label[for='slide3']:hover span,
-input#slide4:checked ~ .footer .controls label[for='slide4']:hover span,
-input#slide5:checked ~ .footer .controls label[for='slide5']:hover span {
-  border: 2px solid #fff;
-  background: transparent;
+  cursor: default;
 }
 
 @media screen and (max-width: 768px) {
@@ -197,5 +182,20 @@ input#slide5:checked ~ .footer .controls label[for='slide5']:hover span {
   }
   .slide img {
     margin-bottom: 1rem;
+  }
+}
+@media (hover: hover) {
+  .controls label:hover span {
+    background-color: #fff;
+  }
+  .controls label:active span {
+    background-color: #2079fb;
+  }
+  input#slide1:checked ~ .footer .controls label[for='slide1']:hover,
+  input#slide2:checked ~ .footer .controls label[for='slide2']:hover,
+  input#slide3:checked ~ .footer .controls label[for='slide3']:hover,
+  input#slide4:checked ~ .footer .controls label[for='slide4']:hover,
+  input#slide5:checked ~ .footer .controls label[for='slide5']:hover {
+    cursor: default;
   }
 }
